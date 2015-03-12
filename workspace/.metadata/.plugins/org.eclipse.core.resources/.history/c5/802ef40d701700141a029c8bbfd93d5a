@@ -1,0 +1,33 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class kAryHeapTest {
+
+	@Test
+	public void testInsert() {
+        	kAryHeap heap = new kAryHeap(3);
+        	heap.insert(3);
+        	assertEquals(heap.getSize(),2);
+                heap.insert(9);
+                assertEquals(heap.getSize(),3);
+                heap.insert(7);
+                assertEquals(heap.getSize(),4);
+                heap.insert(4);
+                assertEquals(heap.getSize(),5);
+                heap.insert(1);
+                assertEquals(heap.getSize(),6);
+                heap.insert(8);
+                assertEquals(heap.getSize(),7);
+                heap.insert(5);
+                assertEquals(heap.getSize(),8);
+                heap.insert(2);
+                assertEquals(heap.getSize(),9);
+                heap.insert(3);
+                assertEquals(heap.getSize(),10);
+                heap.insert(4);
+                assertEquals(heap.getSize(),10);
+	}
+
+}

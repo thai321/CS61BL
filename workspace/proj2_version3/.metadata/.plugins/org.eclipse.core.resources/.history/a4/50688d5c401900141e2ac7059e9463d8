@@ -1,0 +1,31 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import java.util.HashMap;
+
+
+public class HuffmanEncodingTest {
+
+	@Test
+	public void testConstructor() {
+		HuffmanEncoding thai;
+
+		// exception.expectMessage("error1");
+		thai = new HuffmanEncoding("encode","test.txt","output.txt.huffman");
+	}
+
+	@Test
+	public void testTable() {
+		Enco thai;
+		HashMap<String,Integer> freq = new HashMap<String, Integer>();
+		thai = new HuffmanEncoding("encode","test.txt","output.txt.huffman");
+		freq =  thai.getGetFreq();
+
+		assertEquals(freq.get("01100001").toString() , 3 );
+		assertEquals(freq.get("01100010").toString() , 2 );
+		assertEquals(freq.get("01100011").toString() , 1 );
+	}
+
+
+}

@@ -1,0 +1,24 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class kAryHeapTest {
+
+	@Test
+	public void testInsert() {
+		kAryHeap heap = new kAryHeap(3);
+		heap.insert(3);
+		assertEquals(heap.getSize(),1);
+        heap.insert(9);
+        heap.insert(7);
+        heap.insert(4);
+        heap.insert(1);
+        heap.insert(8);
+        heap.insert(5);
+        heap.insert(2);
+        heap.insert(3);
+        heap.insert(4);
+	}
+
+}

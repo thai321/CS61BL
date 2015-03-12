@@ -1,0 +1,13 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class kAryHeapTest {
+
+	@Test
+	public void testInsert() {
+		kAryHeap heap = new kAryHeap(3);
+	}
+
+}

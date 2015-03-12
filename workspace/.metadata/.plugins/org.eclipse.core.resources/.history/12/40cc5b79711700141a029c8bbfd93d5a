@@ -1,0 +1,49 @@
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+
+public class kAryHeapTest {
+
+	@Test
+	public void testInsert() {
+        	kAryHeap heap = new kAryHeap(3);
+            ArrayList<Integer> list = new ArrayList<Integer>();
+        	heap.insert(3);
+        	assertEquals(heap.getSize(),2);
+                heap.insert(9);
+                assertEquals(heap.getSize(),3);
+                heap.insert(7);
+                assertEquals(heap.getSize(),4);
+                heap.insert(4);
+                assertEquals(heap.getSize(),5);
+                heap.insert(1);
+                assertEquals(heap.getSize(),6);
+                heap.insert(8);
+                assertEquals(heap.getSize(),7);
+                heap.insert(5);
+                assertEquals(heap.getSize(),8);
+                heap.insert(2);
+                assertEquals(heap.getSize(),9);
+                heap.insert(3);
+                assertEquals(heap.getSize(),10);
+                heap.insert(4);
+                assertEquals(heap.getSize(),11);
+
+                list = heap.getContents();
+                assertEquals(list.get(0),9);
+                assertEquals(list.get(1),9);
+                assertEquals(list.get(2),9);
+                assertEquals(list.get(3),9);
+                assertEquals(list.get(4),9);
+                assertEquals(list.get(5),9);
+                assertEquals(list.get(6),9);
+                assertEquals(list.get(7),9);
+                
+                
+                
+	}
+
+}

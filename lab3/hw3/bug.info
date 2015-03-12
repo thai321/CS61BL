@@ -1,0 +1,70 @@
+Name: Quoc Thai Nguyen Truong
+login: cs61bl-on
+ID#: 24547327
+
+Partner: Jianqi Huang 
+login cs61bl-nw
+
+
+
+1) Describe all pairs of arguments to check for which contains1MoreThan correctly returns true.
+ 	+ It correctly returns true when myString is the result of inserting exactly one character
+ 	at the last index into an argument s. Since the contains1MoreThan checks all the characters 
+ 	in myString matches with s until the s.length() is 0 and myString.length() is 1, and it's going 
+ 	to return true in the case of s.length() = 0 and myString.length() = 1.
+ 	Example:
+ 		myString = "hello2" and s = "hello"
+
+ 	+ It also correctly returns true if myString.length() is 1 and s.length() is 0
+ 	Example:
+ 		myString = "a" and s = "" 
+
+ 2) Describe all pairs of arguments to check for which contains1MoreThan correctly returns false.
+ It correctly return false if:
+   	+ myString.length() is less than s.length()
+  		Example: myString = "a" and s = "abc"
+
+  	+ myString.length() is two or more than s.length()
+  		Example: myString = "match23" and s = "match" 
+  	
+  	+ when not all character in s is match with myString
+  	    Example: myString = "john" and s = "katy" or myString = "abcd" and s = "adc" 
+
+
+3) Describe all pairs of arguments to check for which contains1MoreThan incorrectly returns true, that is, 
+when the first string argument to check is not the result of inserting exactly one character into the second.
+   There is NO PAIRS OF STRINGS
+
+
+4) Describe all pairs of arguments to check for which contains1MoreThan incorrectly returns false, that is, 
+when the first string argument to check is the result of inserting exactly one character into the second.
+It incorrectly return false if:
+	+ all the characters in myString is match with s except the 1st index of myString. After
+	the 1st, it will go to the last "else" condition, and myString object creates a new String 
+	which but off the 1st character. Since myString and s are String objects so we can't use 
+	"==" to compare the String contains.
+	Example: myString = "2computer" and s = "computer"
+
+	+ all the characters in myString is match with s except one character in the middle index of myString. 
+	contains1MoreThan will run until it hit the character of myString that is not
+	match with s.Then, it will go to the last "else" condition, and myString object creates a new String 
+	which cut off the 1st character to the index that is not match with s. Since myString and s are String 
+	objects so we can't use "==" to compare the String contains.
+	Example: myString = "ab2c" and s = "abc"
+
+5) Describe all pairs of arguments to check for which contains1MoreThan crashes.
+	It will crash if: 
+		+ myString is null and s is not null
+			Example: myString = null and s = "abc"
+		+ myString is not null and s is null
+			Example: myString = "abc" and s = null
+		+ myString is null and s is also null
+			Example: myString = null and s = null
+
+-----------------------------------------------------------------------------------------
+Explanation of the bug
+replace "return myString.substring(1) == s" to "return myString.substring(1).equals(s)"
+the reason is "myString.substring(1) == s" compare the reference between myString object and 
+s object, and String is not primitive type. We know that myString and s are the pointers point
+to list of characters. Since myString and s do not point to the same thing, we can't compare the contains. 
+Therefore, we use "equals" method that built-in java String library to compare the String values between 2 String objects

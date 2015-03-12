@@ -1,0 +1,15 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class DotTest {
+
+	@Test
+	public void testConstructor() {
+		Dot myDot = new Dot();
+		assertFalse(myDot.getColor() >= 1 && myDot.getColor() <=5);
+		
+	}
+
+}

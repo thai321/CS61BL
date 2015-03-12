@@ -1,0 +1,33 @@
+
+
+Which version did you implement for the homework?
+	I implement the program with a single loop.
+
+Describe in words how the other version would work, without actually coding it.
+	I actually think and code it to make sure it works for two-loop version.
+	
+	Explain : 
+		the Two-loop version looks kinda the same as the one-loop version.
+		The only different is when the input is not 0, I create a while loop which
+		add the input to the subtotal and get the new input utill the input is 0.
+
+	Here is how I do it:
+		I created a integer "input" outside the "while(true)" loop.
+		_Inside the "while(true)" loop :
+			I get the user input into "input".
+			_ Then check if the "input" is 0: 
+				if "input" is 0 then check if "justStarting" is false. 
+				If "just Starting" is false, then print the total and return.
+				Other hand if "justStarting" is true, 
+				then print the subtotal, and set the "justStarting" to false.
+			_if the "input" is not 0:
+				I create a while loop with condition "input != 0". Inside the while loop,
+				I added the value of input to the subtotal and get the new input from the user.
+				When the "input" is 0, it will exit the while loop, and print "subtotal" value,
+				add "subtotal" to "total", set "subtotal" to 0 and set "juststarting" to false.
+
+Which version do you prefer? Describe two reasons for preferring the one-loop version and two 
+reasons for preferring the two-loop version.
+
+I prefer the one-loop version, because I only need to get the input from user once for a single loop, while other two-loop version get the input outside and inside the inner loop, which takes longer time than one-loop version.
+Also, one-loop version looks much cleaner than two-loop version since I only use 2 print lines and less if condition checking while two-loop version uses 3 print lines and more condition checking.

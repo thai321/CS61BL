@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Invariants.Date/src"/>
+	<classpathentry kind="src" path="Invariants.InsertionSort/src"/>
+	<classpathentry kind="src" path="Invariants.NumberGuesser/src"/>
+	<classpathentry kind="src" path="XsBeforeOs"/>
+	<classpathentry kind="lib" path="Invariants.Date/lib/DateTest.jar"/>
+	<classpathentry kind="lib" path="Invariants.InsertionSort/lib/InsertionSortTests.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

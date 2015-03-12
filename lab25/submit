@@ -1,0 +1,78 @@
+N = 20, Inorder
+_ Alpha:
+  + Comparision: 48
+  + Movements: 176
+  + Total time: 0
+
+_ Beta:   
+  + Comparision: 19
+  + Movements: 38
+  + Total time: 0
+
+ _ Gamma:
+  + Comparision: 228
+  + Movements: 19
+  + Total time: 0
+  
+ _ Delta:
+  + Comparision: 121
+  + Movements: 178
+  + Total time: 0
+
+_ Epsilon:   
+  + Comparision: 190
+  + Movements: 0
+  + Total time: 0
+
+N = 20, Reverse order
+_ Alpha:
+  + Comparision: 40
+  + Movements: 176
+  + Total time: 0
+
+_ Beta:  
+  + Comparision: 190
+  + Movements: 228
+  + Total time: 0
+
+ _ Gamma:
+  + Comparision: 238
+  + Movements: 49
+  + Total time: 0
+  
+ _ Delta:
+  + Comparision: 105
+  + Movements: 160
+  + Total time: 0
+
+_ Epsilon:
+  + Comparision: 190
+  + Movements: 30
+  + Total time: 0
+  
+_Epsilon : is the selection sort, because whatever N and order of N are, it always take the same
+number of comparision, and for the best case (inorder) the number of movement is 0.
+
+_Beta: is the Insertion sort, because whatever N is and the it's inorder, it always take (N-1) 
+comparision for the best case. For the worst case (reverse order), it takes (N-1) + (N-2) + ... 
++ 1 = N*(N-1)/2 . For the hug N inorder, Insertion sort is the best compare to other sorts, 
+since it only takes N-1 comparisions.
+
+_ Alpha: is the Merge Sort, because whatever the order of N is, the number of movements are 
+always the same
+
+_ Gamma: is the QuickSort, because when I have a big N in InOrder or ReverseOrder, it's take \
+longer than Delta (HeapSort) as the worst case, and the application is froze. However, if N is 
+huge and either almostOrder or Random, Gamma perform faster than Delta, and QuickSort is the 
+best compare to other sorts for N is random
+
+_ Delta: is the heapSort. Since it's using the max heap, so the top number is always the biggest one.
+In the inorder, the run time take O(Nlog(N)), the number of comparision is more than Nlog(N) because whenever we add to 
+the heap, it has to update the heap. However, the reverse order is faster than others orders , and the number of comparision 
+take around Nlog(N).
+
+
+_ between (50,60) elements in the lists , that's when the crossover occurs
+_Before (50,60) the N^2 is sorting faster than Nlog(N), but between 50 and 60 element, that's when the crossover occurs.
+_After (50,60), N^2 is sorting slower than Nlog(N).
+   

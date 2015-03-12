@@ -1,0 +1,108 @@
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+
+public class kAryHeapTest {
+
+	@Test
+	public void testInsertAndgetParent() {
+        	kAryHeap heap = new kAryHeap(3);
+                ArrayList<Integer> list = new ArrayList<Integer>();
+        	heap.insert(3);
+        	assertEquals(heap.getSize(),2);
+                heap.insert(9);
+                assertEquals(heap.getSize(),3);
+                heap.insert(7);
+                assertEquals(heap.getSize(),4);
+                heap.insert(4);
+                assertEquals(heap.getSize(),5);
+                heap.insert(1);
+                assertEquals(heap.getSize(),6);
+                heap.insert(8);
+                assertEquals(heap.getSize(),7);
+                heap.insert(5);
+                assertEquals(heap.getSize(),8);
+                heap.insert(2);
+                assertEquals(heap.getSize(),9);
+                heap.insert(3);
+                assertEquals(heap.getSize(),10);
+                heap.insert(4);
+                assertEquals(heap.getSize(),11);
+
+                list = heap.getContents();
+                int temp = list.get(0);
+                assertEquals(temp,9);
+                
+                temp = list.get(1);
+                assertEquals(temp,8);
+                
+                temp = list.get(2);
+                assertEquals(temp,7);
+                
+                temp = list.get(3);
+                assertEquals(temp,4);
+                
+                temp = list.get(4);
+                assertEquals(temp,1);
+                
+                temp = list.get(5);
+                assertEquals(temp,3);
+                
+                temp = list.get(6);
+                assertEquals(temp,5);
+                
+                temp = list.get(7);
+                assertEquals(temp,2);
+                
+                temp = list.get(8);
+                assertEquals(temp,3);
+                
+                temp = list.get(9);
+                assertEquals(temp,4);
+                                
+	}
+
+        @Test
+        public void testRemoveMaxAndbubbleDownAndgetChild(){
+                kAryHeap heap = new kAryHeap(3);
+                ArrayList<Integer> list = new ArrayList<Integer>();
+                heap.insert(3);
+                assertEquals(heap.getSize(),2); // 0: null, 1: root
+                heap.insert(9);
+                assertEquals(heap.getSize(),3);
+                heap.insert(7);
+                assertEquals(heap.getSize(),4);
+                heap.insert(4);
+                assertEquals(heap.getSize(),5);
+                heap.insert(1);
+                assertEquals(heap.getSize(),6);
+                heap.insert(8);
+                assertEquals(heap.getSize(),7);
+                heap.insert(5);
+                assertEquals(heap.getSize(),8);
+                heap.insert(2);
+                assertEquals(heap.getSize(),9);
+                heap.insert(3);
+                assertEquals(heap.getSize(),10);
+                heap.insert(4);
+                assertEquals(heap.getSize(),11);
+                
+                
+                assertEquals(heap.removeMaxItem(), 9);
+                assertEquals(heap.removeMaxItem(), 8);
+                assertEquals(heap.removeMaxItem(), 7);
+                assertEquals(heap.removeMaxItem(), 5);
+                assertEquals(heap.removeMaxItem(), 4);
+                assertEquals(heap.removeMaxItem(), 4);
+                assertEquals(heap.removeMaxItem(), 3);
+                assertEquals(heap.removeMaxItem(), 3);
+                assertEquals(heap.removeMaxItem(), 2);
+                assertEquals(heap.removeMaxItem(), 1);
+                
+                assertEquals(heap.getSize(),1); // it's null
+        }
+
+}
